@@ -112,7 +112,11 @@ export default defineConfig({
           description: "Torna nel menu del bot è clicca acquista!",
           button: 'Fine',
           onClick: () => {
-            close(); // Chiude la mini app
+            if (window.Telegram?.WebApp) {
+              window.Telegram.WebApp.close(); // Chiude la mini app
+            } else {
+              console.error('Telegram WebApp non è disponibile');
+            }
           },
         },
       ],

@@ -203,7 +203,6 @@ export default defineConfig({
     },
 
     // paywall
-    /*
     {
       extends: 'paywall',
       path: '/paywall',
@@ -258,18 +257,5 @@ export default defineConfig({
         },
       ],
     },
-    */
-   {
-      extends: 'paywall_single',
-      title: 'Mo paga!',
-      description: 'Stronzo',
-      product: {
-        id: '1_tickets',
-        title: '1 ticket',
-        price: 10,
-        description: '1 fottut ticket',
-      },
-      links: [],
-   },
   ],
 });

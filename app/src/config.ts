@@ -110,7 +110,10 @@ export default defineConfig({
           textAlign: 'center',
           title: 'Compra...',
           description: "Torna nel menu del bot è clicca acquista!",
-          button: 'Fine',
+          button: {
+            content: 'Fine',
+            to: '/',
+          },
         },
       ],
     },

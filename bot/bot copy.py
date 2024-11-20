@@ -81,15 +81,50 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     reply_markup = ReplyKeyboardMarkup.from_column(
         [
             KeyboardButton(
-                text="🌈 Info Giveaway",
+                text="🌈 Base Onboarding",
                 web_app=WebAppInfo(
                     url=add_get_params_to_url(
-                        "https://malvio32.github.io/tg-giveaway/", user_data
+                        "https://easterok.github.io/telegram-onboarding-kit", user_data
                     )
                 ),
             ),
             KeyboardButton(
-                text="🌈 Buy ticket",
+                text="💃 Fashion AI Onboarding",
+                web_app=WebAppInfo(
+                    url=add_get_params_to_url("https://tok-ai.netlify.app", user_data)
+                ),
+            ),
+            KeyboardButton(
+                text="🧘 Meditation Onboarding",
+                web_app=WebAppInfo(
+                    url=add_get_params_to_url(
+                        "https://tok-meditation.netlify.app", user_data
+                    )
+                ),
+            ),
+            KeyboardButton(
+                text="🧚‍♂️ AI Tales Onboarding",
+                web_app=WebAppInfo(
+                    url=add_get_params_to_url(
+                        "https://tok-wondertales.netlify.app", user_data
+                    )
+                ),
+            ),
+            KeyboardButton(
+                text="🔐 VPN Onboarding",
+                web_app=WebAppInfo(
+                    url=add_get_params_to_url(
+                        "https://tok-vpn.netlify.app", user_data
+                    )
+                ),
+            ),
+            KeyboardButton(
+                text="🧠 ChatGPT Onboarding",
+                web_app=WebAppInfo(
+                    url=add_get_params_to_url(
+                        "https://tok-chatgpt.netlify.app", user_data
+                    )
+                ),
             ),
         ]
     )
@@ -100,21 +135,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         parse_mode=ParseMode.HTML,
         disable_web_page_preview=True,
     )
-
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """Handle messages from users"""
-        message_text = update.message.text
-
-        if message_text == "🌈 Buy ticket":
-            await update.message.reply_text(
-                text="Tap the link below to proceed with your payment:\n[Buy Ticket](https://t.me/send?start=IVjw5ilErHV0)",
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-            )
-        else:
-            await update.message.reply_text(
-                text="Sorry, I didn't understand that command. Please try again."
-            )
 
 
 async def get_data_from_mini_app(
@@ -393,13 +413,6 @@ def run_bot(
             check_wallet_pay_payment_status, pattern="^check_wallet_pay_payment_status"
         )
     )
-
-    application.add_handler(
-        MessageHandler(
-            filters.TEXT & ~filters.COMMAND, handle_message
-            )
-    )
-
 
     # error handler
     application.add_error_handler(error_handler)

@@ -111,6 +111,9 @@ export default defineConfig({
           title: 'Compra...',
           description: "Torna nel menu del bot è clicca acquista!",
           button: 'Fine',
+          onClick: () => {
+            close(); // Chiude la mini app
+          },
         },
       ],
     },

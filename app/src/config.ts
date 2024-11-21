@@ -71,9 +71,9 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          textAlign: 'center',
+          //textAlign: 'center',
           title: 'Buy...',
-          description: "You can choose to buy packages of 1, 10, or 100 tickets. 🎟️ \nWhen sending your transaction, remember to include a message with your username or email so you can be notified if you win! 🏆 \nGo back to the bot's menu and click 'Buy' to complete your purchase! 🛍️",
+          description: "You can choose to buy packages of 1, 10, or 100 tickets. 🎟️<br>When sending your transaction, <b>remember to include a message with your username or email</b> so you can be notified if you win! 🏆<br>Go back to the bot's menu and click '<b>Buy</b>' to complete your purchase! 🛍️",
           button: {
             content: 'Finish',
             to: '/',

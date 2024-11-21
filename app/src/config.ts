@@ -21,25 +21,11 @@ export default defineConfig({
           button: 'Next',
         },
 
-        // image
+        // list
         {
           media: {
             type: 'image',
             src: import('./assets/img/submariner.jpg'),
-          },
-          shape: 'rounded',
-          pagination: 'count',
-          title: 'Want to be like him?',
-          description:
-            "If the answer is <b>yes</b>, let’s continue... 🚀",
-          button: 'Next',
-        },
-
-        // list
-        {
-          media: {
-            type: 'sticker',
-            src: import('./assets/stickers/submariner.tgs'),
             size: 150,
           },
           shape: 'square',

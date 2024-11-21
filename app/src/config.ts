@@ -15,9 +15,9 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Benvenuto alla lotteria natalizia!',
+          title: 'Welcome to the Christmas Lottery!',
           description:
-            "Compra i tickets e non rompe il cazzo!<br><br>E' <b>semplice</b>, <b>veloce</b>, con <b>grandi possibilità di vincita!</b>",
+            "Buy tickets and have fun! 🎟️<br><br>It’s <b>simple</b>, <b>fast</b>, with <b>great chances to win!</b> 🎉",
           button: 'Next',
         },
 
@@ -29,31 +29,9 @@ export default defineConfig({
           },
           shape: 'rounded',
           pagination: 'count',
-          title: 'Vuoi diventare come lui?',
+          title: 'Want to be like him?',
           description:
-            "Se la risposta è <b>si</b> continuiamo...",
-          button: 'Next',
-        },
-
-        // form
-        {
-          extends: 'form', // note, it's important to extend from 'form' here
-          media: {
-            type: 'sticker',
-            src: import('./assets/stickers/duck_spy.tgs'),
-            size: 150,
-          },
-          shape: 'square',
-          pagination: 'count',
-          title: 'Forms',
-          description: 'Compila il form sottostante',
-          form: [
-            {
-              id: 'text_from_form',
-              placeholder: 'E-mail input',
-              type: 'text',
-            },
-          ],
+            "If the answer is <b>yes</b>, let’s continue... 🚀",
           button: 'Next',
         },
 
@@ -61,14 +39,14 @@ export default defineConfig({
         {
           media: {
             type: 'sticker',
-            src: import('./assets/stickers/duck_juggling.tgs'),
+            src: import('./assets/stickers/submariner.tgs'),
             size: 150,
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Premi',
+          title: 'Prizes',
           description:
-            'Si potranno vincere fantastici premi!',
+            'Amazing prizes await! 🎁',
           list: [
             {
               media: {
@@ -76,7 +54,7 @@ export default defineConfig({
                 src: import('./assets/icons/guide.svg'),
                 size: 30,
               },
-              text: 'Rolex Submariner',
+              text: 'Rolex Submariner 🕰️',
             },
             {
               media: {
@@ -84,7 +62,7 @@ export default defineConfig({
                 src: import('./assets/icons/track.svg'),
                 size: 30,
               },
-              text: '5000$',
+              text: '5000€ 💸',
             },
             {
               media: {
@@ -92,7 +70,7 @@ export default defineConfig({
                 src: import('./assets/icons/time.svg'),
                 size: 30,
               },
-              text: '1000$',
+              text: '1000€ 💰',
             },
           ],
           button: 'Next',
@@ -108,10 +86,10 @@ export default defineConfig({
           shape: 'square',
           pagination: 'count',
           textAlign: 'center',
-          title: 'Compra...',
-          description: "Torna nel menu del bot è clicca acquista!",
+          title: 'Buy...',
+          description: "You can choose to buy packages of 1, 10, or 100 tickets. 🎟️ \nWhen sending your transaction, remember to include a message with your username or email so you can be notified if you win! 🏆 \nGo back to the bot's menu and click 'Buy' to complete your purchase! 🛍️",
           button: {
-            content: 'Fine',
+            content: 'Finish',
             to: '/',
           },
         },

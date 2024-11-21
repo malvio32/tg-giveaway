@@ -67,14 +67,21 @@ def remove_html_tags(text: str) -> str:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_data = get_user_data(update.effective_user)
+    user_name = update.effective_user.first_name if update.effective_user.first_name else ""
 
     text = (
-        f"♥️ Hi! I'm demo bot for <a href='https://github.com/Easterok/telegram-onboarding-kit'>Telegram Onboarding Kit</a>\n"
-        f"\n"
-        f"Below you can see demo onboardings <b>created with our kit</b>. It's better to you watch them from 📱 mobile device\n"
-        f"\n"
-        f"Your language code: <b>{user_data['language_code']}</b>\n"
+        f"♥️ Welcome, {user_name}!\n\n"
+        f"<b>Welcome to the official 2024 Christmas Lottery Bot!</b> 🎄✨\n\n"
+        f"Get ready to participate in the most exciting lottery of the year, where you can win amazing prizes and make this holiday season unforgettable!\n\n"
+        f"<b>This year's incredible prizes include:</b>\n"
+        f"🥇 <b>Rolex Submariner</b> - A timeless luxury watch\n"
+        f"🥈 <b>€5000</b> - Cash to make your dreams come true\n"
+        f"🥉 <b>€1000</b> - A generous holiday bonus\n"
+        f"🎁 <b>100 Amazon gift cards</b>, each worth <b>€100</b> - Perfect for shopping your favorites\n\n"
+        f"Don't miss your chance to win big this Christmas!\n\n"
+        f"<b>Good luck and happy holidays! 🍀🎅</b>\n"
     )
+
 
     user_data = get_user_data(update.effective_user)
 
@@ -89,7 +96,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 ),
             ),
             KeyboardButton(
-                text="🌈 Buy ticket",
+                text="🧾 Buy 1 ticket",
+            ),
+            KeyboardButton(
+                text="🧾 Buy 10 tickets",
+            ),
+            KeyboardButton(
+                text="🧾 Buy 100 tickets",
             ),
         ]
     )
@@ -105,9 +118,21 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         """Handle messages from users"""
         message_text = update.message.text
 
-        if message_text == "🌈 Buy ticket":
+        if message_text == "🧾 Buy 1 ticket" or message_text == "buy":
             await update.message.reply_text(
-                text="Tap the link below to proceed with your payment:\n[Buy Ticket](https://t.me/send?start=IVjw5ilErHV0)",
+                text="Click the link below to buy the ticket:\n[Buy 1 Ticket](https://t.me/send?start=IVjw5ilErHV0)",
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+            )
+        elif message_text == "🧾 Buy 10 ticket":
+            await update.message.reply_text(
+                text="Click the link below to buy the tickets:\n[Buy 10 Tickets](https://t.me/send?start=IVyTuufc4x1s)",
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+            )
+        elif message_text == "🧾 Buy 100 ticket":
+            await update.message.reply_text(
+                text="Click the link below to buy the tickets:\n[Buy 100 Tickets](https://t.me/send?start=IVjKPTuZp75D)",
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
             )
@@ -115,7 +140,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             await update.message.reply_text(
                 text="Sorry, I didn't understand that command. Please try again."
             )
-
 
 async def get_data_from_mini_app(
     update: Update, context: ContextTypes.DEFAULT_TYPE

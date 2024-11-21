@@ -37,7 +37,7 @@ export default defineConfig({
             {
               media: {
                 type: 'icon',
-                src: import('./assets/icons/guide.svg'),
+                src: import('./assets/icons/1.svg'),
                 size: 30,
               },
               text: 'Rolex Submariner 🕰️',
@@ -45,7 +45,7 @@ export default defineConfig({
             {
               media: {
                 type: 'icon',
-                src: import('./assets/icons/track.svg'),
+                src: import('./assets/icons/2.svg'),
                 size: 30,
               },
               text: '5000€ 💸',
@@ -53,7 +53,7 @@ export default defineConfig({
             {
               media: {
                 type: 'icon',
-                src: import('./assets/icons/time.svg'),
+                src: import('./assets/icons/3.svg'),
                 size: 30,
               },
               text: '1000€ 💰',
@@ -73,7 +73,7 @@ export default defineConfig({
           pagination: 'count',
           //textAlign: 'center',
           title: 'Buy...',
-          description: "You can choose to buy packages of 1, 10, or 100 tickets. 🎟️<br>When sending your transaction, <b>remember to include a message with your username or email</b> so you can be notified if you win! 🏆<br>Go back to the bot's menu and click '<b>Buy</b>' to complete your purchase! 🛍️",
+          description: "You can choose to buy packages of 1, 10, or 100 tickets. 🎟️<br><br>When sending your transaction, <b>remember to include a message with your username or email</b> so you can be notified if you win! 🏆<br><br>Go back to the bot's menu and click '<b>Buy</b>' to complete your purchase! 🛍️",
           button: {
             content: 'Finish',
             to: '/',

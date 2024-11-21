@@ -58,6 +58,14 @@ export default defineConfig({
               },
               text: '1000€ 💰',
             },
+            {
+              media: {
+                type: 'icon',
+                src: import('./assets/icons/amazon.svg'),
+                size: 30,
+              },
+              text: '100 Amazon gift cards 🎁',
+            },
           ],
           button: 'Next',
         },
